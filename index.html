@@ -4,89 +4,116 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GLOBE | Sell Faster, Online</title>
-  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #0058d9;
-      --secondary: #f1f5f9;
-      --accent: #e0f2fe;
-      --text: #1e293b;
+      --primary: #000;
+      --background: #f5f5f7;
+      --text: #1d1d1f;
+      --accent: #0071e3;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
-      font-family: 'Urbanist', sans-serif;
-      background: linear-gradient(to bottom right, var(--accent), white);
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
       color: var(--text);
+      line-height: 1.6;
     }
     header {
-      background: var(--primary);
+      background-color: var(--primary);
       color: white;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
     .logo {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-weight: 700;
-      letter-spacing: 1px;
     }
     nav a {
       color: white;
-      margin-left: 1rem;
+      margin-left: 1.5rem;
       text-decoration: none;
       font-weight: 500;
+      font-size: 0.95rem;
     }
     .hero {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-around;
-      padding: 3rem 2rem;
-      background: var(--secondary);
+      text-align: center;
+      padding: 6rem 1.5rem 4rem;
+      background-color: white;
     }
-    .hero-text {
-      max-width: 500px;
-    }
-    .hero-text h1 {
+    .hero h1 {
       font-size: 3rem;
-      color: var(--primary);
+      font-weight: 700;
       margin-bottom: 1rem;
     }
-    .hero-text p {
+    .hero p {
       font-size: 1.2rem;
+      max-width: 600px;
       margin-bottom: 2rem;
     }
     form {
       display: flex;
-      gap: 0.5rem;
       flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
     }
     input[type="email"] {
-      padding: 0.75rem;
-      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
       border: 1px solid #ccc;
-      flex-grow: 1;
+      border-radius: 8px;
+      min-width: 250px;
     }
     button {
-      background: var(--primary);
+      background-color: var(--accent);
       color: white;
       border: none;
+      border-radius: 8px;
       padding: 0.75rem 1.5rem;
-      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
       cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    button:hover {
+      background-color: #005bb5;
+    }
+    .hero-img {
+      margin-top: 3rem;
     }
     .hero-img img {
       width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      max-width: 900px;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
     }
     footer {
       text-align: center;
-      padding: 1rem;
-      background: var(--primary);
+      background-color: var(--primary);
       color: white;
+      padding: 1.5rem;
+      font-size: 0.875rem;
+      margin-top: 4rem;
+    }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -100,17 +127,15 @@
   </header>
 
   <section class="hero">
-    <div class="hero-text">
-      <h1>Put Your Clearance Online</h1>
-      <p>GLOBE helps small clothing shops list sale items online without needing a full website.</p>
-      <form name="waitlist" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="waitlist" />
-        <input type="email" name="email" placeholder="Your email" required>
-        <button type="submit">Join the Waitlist</button>
-      </form>
-    </div>
+    <h1>Put Your Clearance Online</h1>
+    <p>GLOBE helps small clothing shops list sale items online without needing a full website. Reach more customers and move inventory faster.</p>
+    <form name="waitlist" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="waitlist" />
+      <input type="email" name="email" placeholder="Your email" required>
+      <button type="submit">Join the Waitlist</button>
+    </form>
     <div class="hero-img">
-      <img src="https://images.unsplash.com/photo-1602810311458-04c6cfd6b5bb?auto=format&fit=crop&w=800&q=80" alt="Clothing store">
+      <img src="https://images.unsplash.com/photo-1602810311458-04c6cfd6b5bb?auto=format&fit=crop&w=1350&q=80" alt="Clothing store">
     </div>
   </section>
 
