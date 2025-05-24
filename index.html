@@ -4,46 +4,89 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GLOBE | Helping Small Stores Go Online</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
-      font-family: sans-serif;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #f0f4f8, #e0ecf8);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+    .container {
+      max-width: 600px;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
       text-align: center;
-      padding: 50px;
-      background: #f6f6f6;
     }
     h1 {
       font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #333;
     }
     p {
-      font-size: 1.2em;
-      max-width: 500px;
-      margin: auto;
+      font-size: 1.1em;
+      color: #666;
+      margin-bottom: 30px;
     }
     form {
-      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
-    input, button {
-      padding: 10px;
+    input[type="email"] {
+      padding: 12px 15px;
       font-size: 1em;
-      margin: 5px;
-      border-radius: 5px;
       border: 1px solid #ccc;
+      border-radius: 10px;
+      width: 100%;
     }
     button {
-      background: #0070f3;
+      padding: 12px 15px;
+      font-size: 1em;
+      background-color: #0070f3;
       color: white;
       border: none;
+      border-radius: 10px;
       cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    button:hover {
+      background-color: #005bd1;
+    }
+    .thank-you {
+      display: none;
+      color: green;
+      font-weight: 600;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>GLOBE</h1>
-  <p>A platform for small clothing stores to list their sale or clearance items online and reach more customers beyond just foot traffic.</p>
+  <div class="container">
+    <h1>GLOBE</h1>
+    <p>A platform for small clothing stores to display sale or clearance items online and move inventory faster.</p>
 
-  <form name="waitlist" method="POST" data-netlify="true">
-    <input type="email" name="email" placeholder="Enter your email" required />
-    <button type="submit">Join the Waitlist</button>
-  </form>
+    <form name="waitlist" method="POST" data-netlify="true" onsubmit="showMessage();">
+      <input type="email" name="email" placeholder="Enter your email" required />
+      <button type="submit">Join the Waitlist</button>
+      <div class="thank-you" id="thankYouMsg">Thank you! We'll be in touch.</div>
+    </form>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById('thankYouMsg').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
