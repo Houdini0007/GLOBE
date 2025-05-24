@@ -83,3 +83,161 @@
     }
     form {
       display: flex;
+      max-width: 400px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    input[type="email"] {
+      flex-grow: 1;
+      padding: 14px 18px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      transition: border-color 0.3s ease;
+    }
+    input[type="email"]:focus {
+      border-color: #0058d9;
+      outline: none;
+    }
+    button {
+      background: #0058d9;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 25px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      flex-shrink: 0;
+    }
+    button:hover {
+      background: #003ea1;
+    }
+    .thank-you {
+      margin-top: 15px;
+      font-weight: 600;
+      color: green;
+      display: none;
+    }
+
+    .hero-image {
+      flex: 1 1 400px;
+      text-align: center;
+    }
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      object-fit: cover;
+      height: 320px;
+    }
+
+    /* FEATURES */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-around;
+      margin-bottom: 60px;
+    }
+    .feature {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      flex: 1 1 280px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .feature:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+    }
+    .feature svg {
+      width: 64px;
+      height: 64px;
+      fill: #0058d9;
+      margin-bottom: 20px;
+    }
+    .feature h3 {
+      margin-bottom: 15px;
+      color: #0058d9;
+      font-size: 1.3rem;
+    }
+    .feature p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #e9ebf0;
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .hero {
+        flex-direction: column;
+      }
+      .hero-image img {
+        height: 240px;
+      }
+      .features {
+        flex-direction: column;
+      }
+      .feature {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo" aria-label="GLOBE logo">
+    <!-- Simple globe icon -->
+    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <circle cx="32" cy="32" r="30" stroke="white" stroke-width="4" fill="none" />
+      <path d="M2 32h60M32 2c7 0 13 13 13 30s-6 30-13 30-13-13-13-30 6-30 13-30z" stroke="white" stroke-width="3" fill="none" />
+    </svg>
+    GLOBE
+  </div>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#waitlist">Join Waitlist</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" aria-label="Introduction to GLOBE">
+    <div class="hero-text">
+      <h1>Help Small Clothing Stores Sell Faster</h1>
+      <p>GLOBE lets local stores without websites showcase sale and clearance items online — reaching more customers beyond foot traffic.</p>
+      <form id="waitlist" name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="showThankYou(event)">
+        <input type="hidden" name="form-name" value="waitlist" />
+        <input type="email" name="email" placeholder="Your email address" aria-label="Email address" required />
+        <button type="submit">Join the Waitlist</button>
+        <div class="thank-you" id="thankYouMsg" role="alert">Thank you! We'll be in touch soon.</div>
+      </form>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=600&q=80" alt="Clothing store with clothes hanging" />
+    </div>
+  </section>
+
+  <section id="features" class="features" aria-label="GLOBE features">
+    <article class="feature">
+      <!-- Shopping bag icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4H6zm0 4h12v12H6V6zm3 2a3 3 0 116 0v2h-2v-2a1 1 0 10-2 0v2H9v-2z"/></svg>
+      <h3>Easy to Use</h3>
+      <p>No website needed — just upload sale items and get seen online fast.</p>
+    </article>
+    <article class="feature">
+      <!-- Customers icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 
